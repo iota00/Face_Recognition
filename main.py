@@ -1,6 +1,6 @@
 from fr_video_module import face_video_recog as FVR
 from fr_image_module import face
-from os import system
+from os import system, name
 from cv2 import destroyAllWindows, waitKey
 
 ensa = r'''
@@ -24,8 +24,15 @@ menu = r'''
 print(ensa)
 print(menu)
 
+def clear():
+	if name == 'nt':
+	   _ = system('cls')
+
+	else:
+	   _ = system('clear')
+
 while True:
-	system('clear')
+	clear()
 	print(ensa)
 	print(menu)
 
